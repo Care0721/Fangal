@@ -19,76 +19,11 @@
 
 ## 技术栈
 
-- **Electron** 31.x —— 桌面容器
-- **React** 18 —— 渲染层
-- **Vite** 5 —— 构建工具
-- **electron-builder** —— 打包（NSIS 安装包）
+- **Electron** 31.x 
+- **React** 18 
+- **Vite** 5 
+- **electron-builder** 
 
-## 快速开始（开发）
-
-```bash
-# 安装依赖
-npm install
-
-# 启动开发模式（同时起 Vite 与 Electron，带热更新）
-npm run dev
-```
-
-也可以分开启动：
-
-```bash
-# 起渲染层
-npm run dev:renderer
-
-# 另开终端起 Electron 主进程
-npm run dev:electron
-```
-
-## 打包
-
-```bash
-# 构建并产出 Windows 安装包（NSIS，x64）
-npm run build:app
-
-# 只产出解包目录（免安装）
-npm run build:dir
-```
-
-打包产物输出到 `release/` 目录，安装包文件名为 `Fangal Setup x.y.z.exe`。
-
-## 项目结构
-
-```
-galgame-hub/
-├─ src/
-│  ├─ main/            # 主进程
-│  │  ├─ index.js      # 窗口、IPC、生命周期
-│  │  ├─ sites.js      # 三站配置
-│  │  ├─ dataFetcher.js# 抓取与请求
-│  │  ├─ aggregator.js # 聚合、去重、分类、筛选
-│  │  ├─ store.js      # 数据编排层
-│  │  ├─ downloader.js # 内置下载管理器
-│  │  ├─ resourceResolver.js # 资源解析聚合
-│  │  ├─ updater.js    # 检查更新（GitHub Releases）
-│  │  ├─ settings.js   # 设置持久化
-│  │  ├─ cache.js      # 本地缓存
-│  │  └─ secure.js     # 安全加固
-│  ├─ preload/         # 渲染进程桥接
-│  └─ renderer/        # React 界面
-│     └─ src/
-│        ├─ pages/     # 主页 / 分类 / 详情 / 下载 / 设置
-│        ├─ components/# 通用组件
-│        └─ styles/    # 样式
-├─ build/              # 打包资源（图标、NSIS 配置）
-├─ release/            # 打包产物
-└─ dist/               # 前端构建输出
-```
-
-
-
-## 许可证
-
-[MIT](LICENSE)
 
 ## 免责声明
 
